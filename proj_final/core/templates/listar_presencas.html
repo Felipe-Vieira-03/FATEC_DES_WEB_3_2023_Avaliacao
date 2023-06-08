@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css_listar_presenca/style.css' %}">
+    <link rel="stylesheet"  href="{% static 'css_listar_presenca/style.css' %}">
+    <title>Lista de presenças</title>
+    <style>
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+    
+        th, td {
+          padding: 8px;
+          text-align: center;
+          border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+          background-color:darkkhaki;
+        }
+    
+        tr:nth-child(even) {
+          background-color: darkkhaki;
+        }
+    
+        tr:hover {
+          background-color: cornflowerblue;
+        }
+        h1{
+            text-align: center;
+        }
+
+        body{
+            background-color: darkkhaki;
+        }
+      </style>
+</head>
+<body>
+
+<h1>Lista de Alunos</h1>
+<ul>
+
+</ul>
+<table>
+    <thead>
+      <tr>
+        <th>Nome do Aluno</th>
+        <th>Nome do Professor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for registro in registros %}
+        <td>{{ registro.nome_aluno }}</td> 
+        <td>{{ registro.nome_professor }}</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Presença FATEC</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: darkkhaki;
+        }
+    
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        label {
+          font-weight: bold;
+        }
+    
+        select, button {
+          margin-top: 10px;
+        }
+    
+        button {
+          padding: 8px 16px;
+          background-color: cornflowerblue;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+    
+        button:hover {
+          background-color: dodgerblue;
+        }
+    
+    a.btn_presencas {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: cornflowerblue;
+      color: #fff;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    a.btn_presencas:hover {
+      background-color: dodgerblue;
+    }
+      </style> 
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    Nome do aluno: {{ form.nome_aluno }}
+    <br>
+    Nome do professor:
+    <select name="nome_professor">
+        <option value="">Selecione um professor</option>
+        <option value="Orlando">Orlando</option>
+        <option value="Esdras">Esdras</option>
+        <option value="Thiago">Thiago</option>
+        <option value="Jonas">Jonas</option>
+        <option value="Angela">Angela</option>
+        <option value="Sama">Sama</option>
+        <option value="Sandro">Sandro</option>
+        <option value="Ana Célia">Ana Célia</option>
+        <option value="Vagner">Vagner</option>
+        <option value="João">João</option> 
+    </select>
+    <br>
+    <button type="submit" class="btn_cadastro">Cadastrar presença</button>
+</form>
+
+<a href="{% url 'listar_presencas' %}" class="btn_presencas">Listar Usuários</a>
+
+ 
+</body>
+</html>
